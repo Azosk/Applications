@@ -1,0 +1,26 @@
+Author  : Thomas Neider
+Created : 10/26/2023
+
+This project was created with the [dotnet new webapp] command.
+
+In order to configure our environment, we created config.ps1.
+To run config.ps1, you must use a powershell window with 
+administrative privilege. Then, go to the folder with the
+script and run it by typing .\config.ps1 into the CLI.
+As you can see, PowerShell and .NET work seamlessly 
+together and are both open-source and cross-platform.
+
+Our next step was to use the dotnet aspnet-codegenerator to
+create a new razor page using our personal model and 
+database context. We need to run the command with paramaters
+accordingly. (-m Model -dc MyApp.Data.ApplicationDataContext).
+In this project, the command would look like this : 
+[ dotnet aspnet-codegenerator razorpage -m User -dc 
+RazorPagesUser.Data.RazorPagesUserContext -udl 
+-outDir Pages/Users --referenceScriptLibraries
+--databaseProvider sqlite ].
+
+Once the pages are properly scaffolded, we need
+to create the database schema from our code :
+dotnet ef migrations add InitialCreate
+dotnet ef database update
