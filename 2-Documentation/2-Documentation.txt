@@ -1,0 +1,18 @@
+Author  : Thomas Neider
+Created : 11/2/2023
+
+This application was created with the dotnet new console command.
+
+Within this project, we effeciently demonsrate how to integrate 
+entity core within even a simple console application. All that
+is required to get the initial User database set up is to create
+a Models folder, and then create the User.cs file. Afterwards,
+we create the Data folder and set up our database configuration within
+our ApplicationDbContext, in which we also include Db<User> so that
+the User table is inserted into our database. Once you have added
+all the necessary packages, do the initial migration with update
+the database. You can verify the completion of these tasks by looking
+in the Migrations folder and seeing that the User table was created,
+and you can check that the database being made on the configuration
+function sets up our database within the bin/Debug/netcoreapp3.0
+folder.
